@@ -10,7 +10,7 @@ Buffers or Strings
 ```javascript
 var xor = require('bitwise-xor');
 
-xor(new Buffer('00ff', 'hex'), new Buffer('3344', 'hex'));
+xor(Buffer.from('00ff', 'hex'), Buffer.from('3344', 'hex'));
 
 // returns <Buffer 33 bb>
 ```
