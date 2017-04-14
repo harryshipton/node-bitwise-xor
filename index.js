@@ -1,8 +1,8 @@
 module.exports = xor;
 
 function xor(a, b) {
-  if (!Buffer.isBuffer(a)) a = new Buffer(a);
-  if (!Buffer.isBuffer(b)) b = new Buffer(b);
+  if (!Buffer.isBuffer(a)) a = Buffer.alloc(a);
+  if (!Buffer.isBuffer(b)) b = Buffer.alloc(b);
   var res = [];
   if (a.length > b.length) {
     for (var i = 0; i < b.length; i++) {
@@ -13,5 +13,5 @@ function xor(a, b) {
       res.push(a[i] ^ b[i]);
     }
   }
-  return new Buffer(res);
+  return Buffer.from(res);
 }
